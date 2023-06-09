@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up form</title>
+
+    <!--Css Stylesheet-->
     <link rel="stylesheet" href="./styles.css">
+
+    <!--Javascript-->
+    <script src="./javascript.js" defer></script>
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,21 +23,22 @@
     <div class="main">
         <div class="formS">
             <div class="signup">
-                <p>This is not a real online service! This is a sign up form for a hypothetical website.<br><br>Sign up now to get started.</p>
+                <p>This is not a real online service! This is a sign up form for a hypothetical website.<br><br>Sign up <em>now</em> to get started.</p>
             </div>
-            <div class="wrap">
-                <p>Let's do this!</p>
 
-                <form action="" method="get">
+            <form action="" method="get">
+
+                <div class="wrap">
+                    <p>Let's do this!</p>
                     <ul>
                         <li>
                             <label for="firstname">FIRST NAME</label>
-                            <input type="text" id="firstname" name="firstname" placeholder="Jane">
+                            <input type="text" id="firstname" name="firstname" placeholder="Jane" pattern="[A-Za-z]{3,15}" title="Three to fifteen uppercase or/and lowercase letters." autocomplete="on">
                         </li>
 
                         <li>
                             <label for="lastname">LAST NAME</label>
-                            <input type="text" id="lastname" name="lastname" placeholder="Gunnarson">
+                            <input type="text" id="lastname" name="lastname" placeholder="Gunnarson" pattern="[A-Za-z]{3,15}" title="Three to fifteen uppercase or/and lowercase letters." autocomplete="on">
                         </li>
 
                     </ul>
@@ -40,31 +46,34 @@
                     <ul>
                         <li>
                             <label for="email">EMAIL</label>
-                            <input type="email" id="email" name="email" placeholder="example@mail.com">
+                            <input type="email" id="email" name="email" placeholder="example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="on">
                         </li>
 
                         <li>
                             <label for="phonenumber">PHONE NUMBER</label>
-                            <input type="tel" id="phonenumber" name="phonenumber" placeholder="12********">
+                            <input type="tel" id="phonenumber" name="phonenumber" placeholder="12********" pattern="[/d]{10}" title="10 digits." autocomplete="on">
                         </li>
                     </ul>
 
                     <ul>
                         <li>
                             <label for="password">PASSWORD</label>
-                            <input type="password" id="password" name="password">
+                            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <p class="passNoMatch"></p>
                         </li>
 
                         <li>
                             <label for="confirmpassword">CONFIRM PASSWORD</label>
-                            <input type="password" id="confirmpassword" name="confirmpassword">
+                            <input type="password" id="confirmpassword" name="confirmpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                         </li>
                     </ul>
-                </form>
-            </div>
-            <div class="end">
+                </div>
                 <input type="button" value="Create Account">
-                <p>Already have an account? <a class="login" href="">Log in</a></p>
+            </form>
+            
+            <div class="end">
+                <p>Already have an account?</p>
+                <a class="login" href="">Log in</a>
             </div>
         </div>
         <div class="sidebar">

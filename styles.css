@@ -9,11 +9,12 @@ a:hover,a:visited{
 
 li{
    list-style: none; 
-   font-size: 18px;
-   width: 150px;
+   font-size: 16px;
+   width: 200px;
    padding: 0;
    margin: 10px 0px;
-   display: border-box;
+   display: flex;
+   flex-direction: column;
 }
 
 input{
@@ -23,24 +24,56 @@ input{
     appearance: none;
     border: none;
     outline: none;
-    border: 1px solid #ccc;
+    border: 1px solid #E5E7EB;
     border-radius: 5px;
-    box-shadow: 2px 2px 90px 1px hsl(0, 2%, 62%);
 }
 
 input[type="button"]{
     background-color: #596D48;
-    padding: 10px;
+    margin: 5px 50px; 
+    padding: 10px 40px;
     color: #fafafa;
+    font-size: 18px;
+    font-weight: 800;
 }
 
-p > .login{
+input:focus{
+    border: 1px solid #435883;
+    box-shadow: 1px 1px 5px 1px #435883;
+}
+
+input[type="password"]:invalid:focus{
+    border: 1px solid #a10c07;
+    box-shadow: 1px 1px 5px 1px #a10c07;
+}
+
+input[type="password"]:invalid{
+    border: 1px solid #a10c07;
+    box-shadow: none;
+}
+
+input[type="password"]:valid{
+    border: 1px solid #E5E7EB;
+    box-shadow: none;
+}
+
+input[type="password"]:valid:focus{
+    border: 1px solid #435883;
+    box-shadow: 1px 1px 5px 1px #435883;
+}
+
+.end > .login{
     color: #596D48; 
 }
 
 .end{
-    margin: 5% 10%; 
+    margin: 0 50px; 
     padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
 }
 
 :root{
@@ -51,6 +84,7 @@ p > .login{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     font-weight: 500;
+    color: #252525;
 }
 
 header{
@@ -65,7 +99,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .credits{
@@ -86,16 +120,18 @@ header{
 .formS{
     flex: 2;
     min-height: 100vh;
-    background-color: #d9d9d9;
+    background-color: #E5E7EB;
+    margin: 0;
 }
 
 .wrap{
-    background-color: #e7e5e5;
+    background-color: #edf0f5;
     width: 100%;
+    box-shadow: 0px 15px 10px -15px #111;
 }
 
 .wrap>p{
-    margin: 10%;
+    margin-left: 50px;
     padding: 10px;
     padding-top: 20px;
 }
@@ -106,7 +142,7 @@ header{
 }
 
 .signup{
-    margin: 10%;
+    margin: 40px 50px;
     padding: 10px;
     padding-top: 60px;
 }
@@ -114,6 +150,50 @@ header{
 ul{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    align-items: start;
+    margin-left: 20px;
+    font-weight: 300;
+}
+
+.passNoMatch{
+    display: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #a10c07;
+}
+
+@media (orientation:portrait){
+    .main{
+        flex-direction: column-reverse;
+    }
+
+    .formS{
+        flex: 1;
+    }
+
+    .sidebar{
+        min-height: 20vh;
+    }
+
+    .headrow{
+        position: static;
+    }
+
+    .credits{
+        position: static;
+    }
+
+
+    ul{
+        gap: 20px;
+    }
+
+    .end{
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 2px;
+    }
 }
